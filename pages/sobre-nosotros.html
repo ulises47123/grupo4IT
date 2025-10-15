@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - G4IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Importación de la librería de Íconos (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide-dev@latest"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="particles-container"></div>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="../index.html" class="nav-logo">G4IT</a>
+            <ul class="nav-menu">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        <h1 class="section-title fade-in">Somos Arquitectos de Soluciones Digitales</h1>
+        
+        <!-- ======================== -->
+        <!--    SECCIÓN DE EQUIPO     -->
+        <!-- ======================== -->
+        <section class="team-section fade-in">
+            <!-- Texto de introducción actualizado -->
+            <h2 class="team-main-title">Nuestro Equipo</h2>
+            <p class="team-intro-text">
+                Conozca a los profesionales que hacen posible cada proyecto. Nuestro equipo multidisciplinario combina experiencia y creatividad para ofrecer resultados excepcionales en cada área de la tecnología.
+            </p>
+
+            <!-- Contenedor de la cuadrícula con los perfiles reales -->
+            <div class="team-grid">
+                
+                <!-- Perfil de Candela Geronimo -->
+                <div class="profile-card">
+                    <img src="../assets/perfiles/Candela Geronimo.png" alt="Foto de Candela Geronimo" class="profile-photo">
+                    <h3 class="profile-name">Candela Geronimo</h3>
+                    <p class="profile-role">Especialista en Documentos y Soporte en Información</p>
+                    <a href="../assets/cv/candela-geronimo.pdf" class="cv-button" target="_blank">ver CV</a>
+                </div>
+
+                <!-- Perfil de Tania Garnica -->
+                <div class="profile-card">
+                    <img src="../assets/perfiles/Tania Garnica.png" alt="Foto de Tania Garnica" class="profile-photo">
+                    <h3 class="profile-name">Tania Garnica</h3>
+                    <p class="profile-role">Especialista en mantenimiento de Hardware</p>
+                    <a href="../assets/cv/tania-garnica.pdf" class="cv-button" target="_blank">ver CV</a>
+                </div>
+
+                <!-- Perfil de Ulises Julian Cabezas -->
+                <div class="profile-card">
+                    <img src="../assets/perfiles/Ulises Julian Cabezas.png" alt="Foto de Ulises Julian Cabezas" class="profile-photo">
+                    <h3 class="profile-name">Ulises Julian Cabezas</h3>
+                    <p class="profile-role">Técnico en Infraestructura y Sistemas</p>
+                    <a href="../assets/cv/ulises-cabezas.pdf" class="cv-button" target="_blank">ver CV</a>
+                </div>
+
+                <!-- Perfil de Roberto Rene Arze -->
+                <div class="profile-card">
+                    <img src="../assets/perfiles/Roberto Rene Arze.png" alt="Foto de Roberto Rene Arze" class="profile-photo">
+                    <h3 class="profile-name">Roberto Rene Arze</h3>
+                    <p class="profile-role">Técnico en Sistemas y Seguridad Informática</p>
+                    <a href="../assets/cv/roberto-arze.pdf" class="cv-button" target="_blank">ver CV</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================== -->
+    <!--    SECCIÓN DE BITÁCORA     -->
+    <!-- ======================== -->
+    <section class="bitacora-section fade-in">
+        <h2 class="bitacora-title">Bitácora de Proyectos</h2>
+        <p class="bitacora-subtitle">Un vistazo a nuestro proceso. Aquí documentamos los desafíos, aprendizajes y avances de nuestros trabajos.</p>
+
+        <div class="accordion">
+            <!-- Item 1 del Acordeón -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>#Día 1: Descubrimiento y Planificación</span>
+                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="content-wrapper">
+                        <div class="content-text">
+                            <p>La fase inicial se centró en reuniones con el cliente para definir los objetivos clave del proyecto Nexus ERP. Se analizaron los flujos de trabajo existentes y se identificaron los puntos débiles del sistema anterior. El principal desafío fue traducir los complejos procesos de logística a una arquitectura de software modular y escalable.</p>
+                            <p><strong>Aprendizaje:</strong> Una documentación clara en esta etapa es crucial para evitar retrabajos futuros.</p>
+                        </div>
+                        <div class="content-gallery">
+                            <img src="https://placehold.co/400x300/2b2b36/ffffff?text=Diagrama+Flujo" alt="Diagrama de flujo del proyecto">
+                            <img src="https://placehold.co/400x300/2b2b36/ffffff?text=Reuni%C3%B3n" alt="Foto de la reunión de planificación">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 del Acordeón -->
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>#Día 2: Diseño de UI/UX y Prototipado</span>
+                    <i data-lucide="chevron-down" class="accordion-icon"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Contenido del Día 2 irá aquí...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 G4IT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <!-- Script para activar los íconos -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <!-- Importación de la librería tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+</body>
+</html>

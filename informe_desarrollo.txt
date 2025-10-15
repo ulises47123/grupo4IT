@@ -1,0 +1,130 @@
+### Informe Técnico de Desarrollo – Sitio Web Corporativo G4IT
+
+**Arquitecto a cargo de la revisión:** [Nombre del Arquitecto]
+**Desarrollador a cargo:** Gemini AI
+**Fecha:** 14 de octubre de 2025
+
+---
+
+#### **1. Resumen Ejecutivo del Proyecto**
+
+El presente documento detalla el proceso de desarrollo y la arquitectura técnica del sitio web corporativo para "G4IT". El proyecto se ejecutó siguiendo un documento de especificaciones técnicas detallado, con el objetivo de crear una presencia en línea con una estética "Futurista Minimalista".
+
+El resultado es un sitio web de 5 páginas, completamente responsivo, interactivo y construido sobre una base de código moderna, mantenible y escalable. Se ha puesto especial énfasis en la organización del código, la eficiencia del rendimiento y la experiencia de usuario.
+
+---
+
+#### **2. Estructura Inicial del Proyecto**
+
+Se estableció una estructura de directorios y archivos lógica y estándar para facilitar la navegación y el mantenimiento del código fuente:
+
+```
+/
+│
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── pages/
+│   ├── servicios.html
+│   ├── portafolio.html
+│   ├── sobre-nosotros.html
+│   └── contacto.html
+└── assets/
+    ├── images/
+    └── icons/
+```
+
+Esta organización separa claramente la estructura (HTML), la presentación (CSS) y el comportamiento (JavaScript), lo cual es fundamental para la escalabilidad del proyecto.
+
+---
+
+#### **3. Arquitectura del CSS (`css/style.css`)**
+
+El archivo `style.css` fue diseñado como una plantilla robusta, organizada en torno a cuatro pilares fundamentales:
+
+**Pilar 1: Organización y Mantenibilidad**
+
+*   **Variables CSS (Custom Properties):** Se utilizó `:root` para definir una paleta de colores global y variables de tipografía. Esto permite cambios de diseño en todo el sitio modificando una sola línea de código, eliminando la redundancia y facilitando el mantenimiento.
+
+    ```css
+    :root {
+        --color-base: #0f0f17;
+        --color-accent: #7f5af0;
+        --color-light-effect: #00e0ff;
+        --font-primary: 'Poppins', sans-serif;
+    }
+    ```
+
+*   **Reseteo Global:** Se aplicó un reseteo (`* { margin: 0; padding: 0; box-sizing: border-box; }`) para neutralizar los estilos por defecto de los navegadores, garantizando una base consistente y predecible para el diseño en todos los entornos.
+
+**Pilar 2: Layout Moderno con Flexbox y Grid**
+
+*   **Flexbox:** Se utilizó para alinear y distribuir elementos en componentes complejos como la barra de navegación (`.main-nav`), garantizando una alineación vertical y horizontal perfecta del logo y los enlaces.
+*   **CSS Grid:** Es la base de todos los layouts de cuadrícula del sitio (`.services-grid`, `.portfolio-grid`, etc.), permitiendo crear diseños complejos y, sobre todo, fácilmente adaptables a diferentes tamaños de pantalla.
+
+**Pilar 3: Estética Visual Avanzada**
+
+*   **Efecto "Glassmorphism":** La cabecera fija (`.main-header`) implementa este efecto combinando un color de fondo con transparencia alfa, el filtro `backdrop-filter: blur(10px)` para desenfocar el contenido que pasa por detrás, y un borde sutil para simular un reflejo.
+*   **Fondo "Neblina Digital":** El fondo del `<body>` no es una imagen, sino una composición de múltiples `radial-gradient` semitransparentes. Esta técnica es extremadamente ligera y eficiente, creando una atmósfera dinámica sin afectar los tiempos de carga.
+
+**Pilar 4: Interactividad Fluida**
+
+*   **Transiciones Suaves:** Todos los estados `:hover` (en botones, enlaces, tarjetas) utilizan la propiedad `transition` para animar los cambios de color, tamaño o sombra, proporcionando una experiencia de usuario fluida y pulida.
+*   **Pseudo-elementos (`::after`):** Para la línea animada bajo los enlaces de navegación, se utilizó un pseudo-elemento `::after`. Su `transform: scaleX()` se anima de 0 a 1 en el estado `:hover`, creando un detalle visual elegante sin añadir elementos innecesarios al HTML.
+
+---
+
+#### **4. Lógica de JavaScript (`js/main.js`)**
+
+El archivo `main.js` centraliza toda la interactividad del sitio, ejecutándose después de que el DOM esté completamente cargado (`DOMContentLoaded`).
+
+*   **Animaciones de Scroll Eficientes:** Se implementó un `IntersectionObserver` para gestionar las animaciones de aparición (`.fade-in`). Este método es mucho más performante que escuchar eventos de scroll, ya que solo se activa cuando un elemento entra en el área visible, añadiendo la clase `.visible` que a su vez activa la transición CSS.
+
+*   **Navegación Móvil (Menú Hamburguesa):** Un `event listener` en el icono `.nav-toggle` se encarga de alternar (`toggle`) la clase `.active` en el menú y en el propio icono. El CSS se encarga de la animación de deslizamiento del menú y la transformación del icono en una 'X'.
+
+*   **Filtrado de Proyectos (Portafolio):**
+    1.  Se asignan `event listeners` a todos los botones de filtro (`.filter-btn`).
+    2.  Al hacer clic, se obtiene el valor del atributo `data-filter` del botón.
+    3.  Se recorren todas las tarjetas de proyecto (`.project-card`) y se compara su `data-category` con el filtro. Se modifica la propiedad `display` a `block` o `none` según corresponda.
+    4.  La clase `.active` se gestiona dinámicamente en los botones para resaltar el filtro seleccionado.
+
+*   **Ventana Modal (Portafolio):**
+    1.  Se asigna un `event listener` a cada `.project-card`.
+    2.  Al hacer clic, se previene la acción por defecto y se extrae la información de la tarjeta (imagen, título, categoría).
+    3.  Estos datos se inyectan en la estructura HTML de la modal (que está oculta por defecto con `display: none`).
+    4.  Se cambia el `display` de la modal a `block` para mostrarla.
+    5.  La modal se cierra mediante `event listeners` en el botón de cierre (`.close-modal`) y en el fondo de la superposición, que simplemente revierten el `display` a `none`.
+
+---
+
+#### **5. Desglose por Páginas y Componentes**
+
+*   **`index.html`:** Página principal que sirve como introducción. Contiene la sección Hero a pantalla completa, una cuadrícula de servicios destacados, y una llamada a la acción final.
+
+*   **`pages/servicios.html`:** Presenta una cuadrícula extendida de todos los servicios ofrecidos. Las tarjetas de servicio reutilizan los estilos definidos para la página de inicio, demostrando la modularidad del CSS.
+
+*   **`pages/portafolio.html`:** La página más compleja. Incluye la barra de filtros y la cuadrícula de proyectos con su interactividad JS. El layout de la cuadrícula es auto-ajustable (`repeat(auto-fill, minmax(300px, 1fr))`), lo que la hace inherentemente responsiva.
+
+*   **`pages/sobre-nosotros.html`:** Página de contenido estático con una estructura simple para presentar al equipo.
+
+*   **`pages/contacto.html`:** Incluye un formulario de contacto funcional y estilizado, junto a la información de contacto, en un layout de dos columnas que se adapta a una sola en móvil.
+
+---
+
+#### **6. Estrategia de Diseño Responsivo**
+
+La adaptabilidad móvil fue una prioridad clave. La estrategia se centró en el uso de una única `media query` en `(max-width: 768px)` para aplicar los cambios más significativos:
+
+*   **Colapso de la Navegación:** El menú principal se oculta y es reemplazado por el icono de hamburguesa.
+*   **Apilamiento de Cuadrículas:** Todas las estructuras basadas en CSS Grid (`.services-grid`, `.contact-wrapper`, etc.) se reconfiguran a una sola columna (`grid-template-columns: 1fr`) para una visualización óptima en vertical.
+*   **Ajustes Tipográficos:** Se redujo el tamaño de la fuente de títulos principales para evitar desbordamientos en pantallas pequeñas.
+
+---
+
+#### **7. Conclusión**
+
+El proyecto se ha completado con éxito, cumpliendo con todas las especificaciones del documento técnico. El resultado es un sitio web visualmente atractivo, rápido, funcional y con una base de código limpia y bien documentada, preparada para futuras expansiones o modificaciones.
+
+Este informe proporciona una visión completa de la arquitectura y las decisiones técnicas tomadas durante el desarrollo. Quedo a su disposición para cualquier aclaración o revisión del código fuente.

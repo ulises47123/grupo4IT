@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - G4IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Importación de la librería de Íconos (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide-dev@latest"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="particles-container"></div>
+
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="../index.html" class="nav-logo">G4IT</a>
+            <ul class="nav-menu">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        <h1 class="section-title fade-in">Nuestro Trabajo</h1>
+
+        <div class="filter-bar fade-in">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="web">Desarrollo Web</button>
+            <button class="filter-btn" data-filter="programacion">Programación</button>
+            <button class="filter-btn" data-filter="recuperacion">Recuperación de Datos</button>
+        </div>
+
+        <div class="portfolio-grid fade-in">
+            <div class="project-card" data-category="programacion" data-description="Desarrollamos un sistema de planificación de recursos (ERP) a medida para una empresa de logística regional. La aplicación centraliza la gestión de inventario, rutas de distribución y facturación, logrando una reducción del 25% en tiempos operativos.">
+                <img src="https://placehold.co/600x400/0f0f17/7f5af0?text=Nexus+ERP" alt="Proyecto Nexus ERP">
+                <div class="project-overlay">
+                    <h3>Nexus ERP</h3>
+                    <p>Programación</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="web" data-description="Diseño y desarrollo del sitio web corporativo para una startup de inteligencia artificial. Se implementó un diseño de vanguardia con micro-interacciones y un sistema de gestión de contenidos (CMS) para que el cliente pudiera actualizar su blog y noticias de forma autónoma.">
+                <img src="https://placehold.co/600x800/0f0f17/7f5af0?text=Quantum+Leap" alt="Proyecto Quantum Leap Tech">
+                <div class="project-overlay">
+                    <h3>Quantum Leap Tech</h3>
+                    <p>Desarrollo Web</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="recuperacion" data-description="Caso de éxito en la recuperación del 98% de los archivos de un estudio de diseño cuyo disco duro principal sufrió un fallo físico. Se recuperaron más de 5TB de proyectos críticos, evitando una pérdida catastrófica para el cliente.">
+                <img src="https://placehold.co/600x600/0f0f17/7f5af0?text=Data+Fortress" alt="Proyecto Data Fortress Recovery">
+                <div class="project-overlay">
+                    <h3>Data Fortress Recovery</h3>
+                    <p>Recuperación de Datos</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="" alt="Proyecto" id="modal-img">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 G4IT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <!-- Script para activar los íconos -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <!-- Importación de la librería tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+</body>
+</html>
