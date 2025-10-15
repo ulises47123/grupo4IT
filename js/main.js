@@ -195,3 +195,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// --- Lógica para activar la galería Lightbox en la Bitácora ---
+// Se aplica a cualquier enlace dentro de un div con la clase .content-gallery
+var lightbox = new SimpleLightbox('.content-gallery a', {
+    /* Opciones opcionales para personalizar el estilo */
+    captionsData: 'alt',
+    captionDelay: 250,
+});
+
+// --- Lógica para el botón "Ver galería completa" ---
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryButton = document.querySelector('.gallery-view-all');
+    if (galleryButton) {
+        galleryButton.addEventListener('click', function() {
+            // Busca el primer enlace de la galería
+            const firstImageLink = document.querySelector('.content-gallery a');
+            if (firstImageLink) {
+                // Simula un clic en la primera imagen para abrir la Lightbox
+                firstImageLink.click();
+            }
+        });
+    }
+});

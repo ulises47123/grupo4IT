@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Importación de la librería de Íconos (Lucide Icons) -->
     <script src="https://unpkg.com/lucide-dev@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -16,7 +17,10 @@
 
     <header class="main-header">
         <nav class="main-nav container">
-            <a href="../index.html" class="nav-logo">G4IT</a>
+            <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo/logo.png" alt="Logo de Grupo4IT" class="logo-icon">
+    <span>Grupo4IT</span>
+</a>
             <ul class="nav-menu">
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="portafolio.html">Portafolio</a></li>
@@ -91,37 +95,130 @@
         <p class="bitacora-subtitle">Un vistazo a nuestro proceso. Aquí documentamos los desafíos, aprendizajes y avances de nuestros trabajos.</p>
 
         <div class="accordion">
-            <!-- Item 1 del Acordeón -->
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>#Día 1: Descubrimiento y Planificación</span>
-                    <i data-lucide="chevron-down" class="accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <div class="content-wrapper">
-                        <div class="content-text">
-                            <p>La fase inicial se centró en reuniones con el cliente para definir los objetivos clave del proyecto Nexus ERP. Se analizaron los flujos de trabajo existentes y se identificaron los puntos débiles del sistema anterior. El principal desafío fue traducir los complejos procesos de logística a una arquitectura de software modular y escalable.</p>
-                            <p><strong>Aprendizaje:</strong> Una documentación clara en esta etapa es crucial para evitar retrabajos futuros.</p>
-                        </div>
-                        <div class="content-gallery">
-                            <img src="https://placehold.co/400x300/2b2b36/ffffff?text=Diagrama+Flujo" alt="Diagrama de flujo del proyecto">
-                            <img src="https://placehold.co/400x300/2b2b36/ffffff?text=Reuni%C3%B3n" alt="Foto de la reunión de planificación">
-                        </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <span>#Día 1: Desmontaje y Diagnóstico de Hardware</span>
+            <i data-lucide="chevron-down" class="accordion-icon"></i>
+        </button>
+        <div class="accordion-content">
+            <div class="content-wrapper">
+                <div class="content-text">
+                    <h4>Actividad Realizada</h4>
+                    <p>Se procedió al desmontaje de un equipo de cómputo para realizar un inventario de sus componentes. Paralelamente, se realizó la instalación y configuración de un proyector y sistema de sonido en el aula.</p>
+                    
+                    <h4>Problema Encontrado</h4>
+                    <p>El equipo de prueba dejó de encender después de un funcionamiento inicial, lo que requirió un diagnóstico inmediato.</p>
+
+                    <h4>Diagnóstico y Solución Aplicada</h4>
+                    <p>La revisión técnica concluyó que el fallo se originó en la ranura de memoria RAM o en una resistencia afectada por la antigüedad del componente. Se documentó el estado y se reensambló el equipo para futuras prácticas.</p>
+                </div>
+                <div class="content-gallery">
+                    <a href="../assets/bitacora/dia1/foto1.jpg"><img src="../assets/bitacora/dia1/foto1.jpg" alt="Componentes internos del PC"></a>
+                    <a href="../assets/bitacora/dia1/foto2.jpg"><img src="../assets/bitacora/dia1/foto2.jpg" alt="Instalación de proyector"></a>
+                    <a href="../assets/bitacora/dia1/foto3.jpg"><img src="../assets/bitacora/dia1/foto3.jpg" alt="Diagnóstico de RAM"></a>
+                    <a href="../assets/bitacora/dia1/foto4.jpg"><img src="../assets/bitacora/dia1/foto4.jpg" alt="Ensamblaje del equipo"></a>
+                
+                    <button class="gallery-view-all">Ver galería completa (+29 fotos)</button>
+
+                    <div class="gallery-hidden">
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.07 PM (3).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.07 PM (3).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.07 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.07 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.08 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.09 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (3).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM (3).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.10 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.11 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.12 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.13 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM (1).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM (1).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM (2).jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM (2).jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.14 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
+                        <a href="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.15 PM.jpeg"><img src="../assets/bitacora/dia1/WhatsApp Image 2025-10-15 at 3.56.15 PM.jpeg" alt="Foto de la práctica del Día 1"></a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Item 2 del Acordeón -->
-            <div class="accordion-item">
-                <button class="accordion-header">
-                    <span>#Día 2: Diseño de UI/UX y Prototipado</span>
-                    <i data-lucide="chevron-down" class="accordion-icon"></i>
-                </button>
-                <div class="accordion-content">
-                    <p>Contenido del Día 2 irá aquí...</p>
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <span>#Día 2: Mantenimiento Preventivo y Extracción de Componentes</span>
+            <i data-lucide="chevron-down" class="accordion-icon"></i>
+        </button>
+        <div class="accordion-content">
+            <div class="content-wrapper">
+                <div class="content-text">
+                    <h4>Actividad Realizada</h4>
+                    <p>Se efectuó un <strong>mantenimiento preventivo de limpieza</strong> general a dos unidades, utilizando pinceles, paños y herramientas de precisión. Se removió una acumulación significativa de polvo de todos los componentes internos para mejorar la disipación de calor y prevenir fallos.</p>
+                    <p>Adicionalmente, se realizó la <strong>extracción de un disco duro</strong> funcional de una de las PCs, con el propósito de reutilizarlo en un nuevo ensamblaje.</p>
                 </div>
+                <div class="content-gallery">
+                    </div>
             </div>
         </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <span>#Día 3: Ensamblaje con Componentes Reciclados y Preparación de SO</span>
+            <i data-lucide="chevron-down" class="accordion-icon"></i>
+        </button>
+        <div class="accordion-content">
+            <div class="content-wrapper">
+                <div class="content-text">
+                    <h4>Actividad Realizada</h4>
+                    <p>Se desensamblaron cuatro equipos de mesa con el objetivo de seleccionar los mejores componentes para <strong>ensamblar una nueva unidad de cómputo</strong> funcional. Se revisaron dos discos duros extraídos:</p>
+                    <ul>
+                        <li><strong>Unidad 1:</strong> Vacía, sin sistema operativo ni datos.</li>
+                        <li><strong>Unidad 2:</strong> Contenía particiones y archivos preexistentes.</li>
+                    </ul>
+                    <p>Se seleccionó la unidad vacía para la nueva instalación del sistema operativo y se realizó una limpieza general de todos los componentes reutilizados.</p>
+                </div>
+                <div class="content-gallery">
+                     </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <span>#Día 4: Configuración de Software por Grupos</span>
+            <i data-lucide="chevron-down" class="accordion-icon"></i>
+        </button>
+        <div class="accordion-content">
+            <div class="content-wrapper full-width"> <div class="content-text">
+                    <h4>Actividad Realizada</h4>
+                    <p>La jornada se organizó en dos grupos de trabajo para agilizar la configuración de software en el equipo ensamblado:</p>
+                    
+                    <div class="task-list">
+                        <div class="task-group">
+                            <h5>Grupo 1: Productividad y Red</h5>
+                            <p>Se encargó de la instalación completa del paquete <strong>Office</strong>. Adicionalmente, se instaló el <strong>driver de Wi-Fi</strong> de una antena de red externa, la cual se utilizará para evaluar y probar el rendimiento de la máquina.</p>
+                        </div>
+                        <div class="task-group">
+                            <h5>Grupo 2: Multimedia</h5>
+                            <p>Se enfocó en la correcta carga e instalación de los <strong>drivers de audio</strong> necesarios para garantizar el funcionamiento óptimo del sonido en el equipo.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+</div>
     </section>
 
     <footer class="main-footer">
@@ -130,6 +227,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js"></script>
     <script src="../js/main.js"></script>
     <!-- Script para activar los íconos -->
     <script>
