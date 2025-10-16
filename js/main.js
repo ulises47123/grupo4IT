@@ -206,15 +206,19 @@ var lightbox = new SimpleLightbox('.content-gallery a', {
 
 // --- Lógica para el botón "Ver galería completa" ---
 document.addEventListener('DOMContentLoaded', function() {
-    const galleryButton = document.querySelector('.gallery-view-all');
-    if (galleryButton) {
-        galleryButton.addEventListener('click', function() {
-            // Busca el primer enlace de la galería
-            const firstImageLink = document.querySelector('.content-gallery a');
-            if (firstImageLink) {
-                // Simula un clic en la primera imagen para abrir la Lightbox
-                firstImageLink.click();
+    const galleryButtons = document.querySelectorAll('.gallery-view-all');
+    galleryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Busca el contenedor de la galería más cercano al botón que se presionó
+            const gallery = this.closest('.content-gallery');
+            if (gallery) {
+                // Busca el primer enlace de imagen dentro de ESA galería específica
+                const firstImageLink = gallery.querySelector('a');
+                if (firstImageLink) {
+                    // Simula un clic en esa primera imagen para abrir la Lightbox correcta
+                    firstImageLink.click();
+                }
             }
         });
-    }
+    });
 });

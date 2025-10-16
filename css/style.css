@@ -858,31 +858,36 @@ a {
     opacity: 1;
 }
 
-/* --- Estilos para la tabla de tareas (Día 4) --- */
+/* --- Estilos para la tabla de tareas (Día 3) --- */
 .task-list {
     margin-top: 2rem;
-    display: flex;
+    display: grid; /* Usamos grid para un mejor control */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
     gap: 2rem;
 }
+
 .task-group {
-    flex: 1;
     background-color: rgba(15, 15, 23, 0.5);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px; /* Bordes un poco más redondeados */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .task-group h5 {
     color: #fff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
 }
 
-/* --- Media Query para adaptar en móvil --- */
- @media (max-width: 768px) {
-    .content-wrapper {
-        grid-template-columns: 1fr; /* Apila texto y galería */
-    }
+.task-group p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* --- Adaptación para móvil --- */
+@media (max-width: 768px) {
     .task-list {
-        flex-direction: column; /* Apila los grupos de tareas */
+        grid-template-columns: 1fr; /* Apila los grupos en una sola columna */
     }
 }
 /* =============================================== */
