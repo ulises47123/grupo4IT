@@ -930,3 +930,38 @@ a {
     background-color: var(--color-accent);
     color: #fff;
 }
+
+/* ================================================= */
+/* ==  Estilos para Animación Arcoíris del Logo   == */
+/* ================================================= */
+
+/* 1. Define el movimiento de la animación (ida y vuelta) */
+@keyframes arcoiris-brillante {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Aplica el estilo y la animación al texto del logo */
+.nav-logo span {
+    /* El gradiente con la secuencia de colores que se repetirá */
+    background: linear-gradient(
+        90deg,
+        #00BFFF, /* Cian */
+        #8A2BE2, /* Violeta */
+        #FF00FF, /* Magenta */
+        #39FF14, /* Verde Neón */
+        #00BFFF  /* Se repite el Cian para un bucle perfecto */
+    );
+    
+    /* Hacemos el fondo 4 veces más grande para un movimiento suave */
+    background-size: 400% 400%;
+    
+    /* Hacemos el texto transparente para ver el fondo a través de él */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Aplicamos la animación: más lenta (10s), suave (ease) y continua (infinite) */
+    animation: arcoiris-brillante 10s ease infinite;
+}
