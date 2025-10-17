@@ -1,64 +1,111 @@
-Instrucciones para el Desarrollador: Reintegrar Galería en Día 3
-Objetivo: Añadir la galería de fotos nuevamente a la sección del #Día 3, ubicándola debajo de las cajas de texto de los grupos para mantener el diseño organizado y profesional.
+Paso 1: Inyección de Estilos CSS en el <head>
+Mi primer objetivo es añadir los estilos necesarios sin crear un nuevo archivo CSS, para mantener encapsulada la lógica de este componente.
 
-## 1. Actualizar la Estructura HTML
-Archivo a modificar: pages/sobre-nosotros.html
+Localizo el </head>: Abro tu archivo index.html y navego hasta el final de la sección <head>. La encuentro justo después de la línea <link rel="stylesheet" href="css/style.css">.
 
-Acción: Dentro del accordion-item del #Día 3, busca el div con la clase content-text. Justo después del cierre de ese div (pero antes del cierre de content-wrapper), añade el siguiente bloque de código para la galería.
-
-Básicamente, estamos combinando los dos diseños: el texto de los grupos arriba y la galería de vista previa 2x2 debajo.
+Inserto el bloque de estilos: Justo antes de la etiqueta </head>, inserto un bloque <style>. Esto asegura que estos estilos se carguen con la página y anulen cualquier estilo conflictivo de style.css si es necesario, debido al orden en cascada. El bloque que inserto es el siguiente:
 
 HTML
 
-<div class="accordion-item">
-    <button class="accordion-header">
-        <span>#Día 3: Configuración de Software por Grupos</span>
-        <i data-lucide="chevron-down" class="accordion-icon"></i>
-    </button>
-    <div class="accordion-content">
-        <div class="content-wrapper"> 
-            <div class="content-text">
-                <h4>Actividad Realizada</h4>
-                <p>La jornada se organizó en dos grupos de trabajo para agilizar la configuración de software en el equipo ensamblado:</p>
-                
-                <div class="task-list">
-                    <div class="task-group">
-                        <h5>Grupo 1: Productividad y Red</h5>
-                        <p>Se encargó de la instalación completa del paquete <strong>Office</strong>. Adicionalmente, se instaló el <strong>driver de Wi-Fi</strong> de una antena de red externa, la cual se utilizará para evaluar y probar el rendimiento de la máquina.</p>
-                    </div>
-                    <div class="task-group">
-                        <h5>Grupo 2: Multimedia</h5>
-                        <p>Se enfocó en la correcta carga e instalación de los <strong>drivers de audio</strong> necesarios para garantizar el funcionamiento óptimo del sonido en el equipo.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-gallery">
-                <a href="../assets/bitacora/Dia 3/paso 1para intalar ofice.jpeg"><img src="../assets/bitacora/Dia 3/paso 1para intalar ofice.jpeg" alt="Inicio de instalación de Office"></a>
-                <a href="../assets/bitacora/Dia 3/paso 3 entramos al intalar de el ofice .jpeg"><img src="../assets/bitacora/Dia 3/paso 3 entramos al intalar de el ofice .jpeg" alt="Instalador de Office en proceso"></a>
-                <a href="../assets/bitacora/Dia 3/paso 4 termino de cargar el office.jpeg"><img src="../assets/bitacora/Dia 3/paso 4 termino de cargar el office.jpeg" alt="Instalación de Office completada"></a>
-                <a href="../assets/bitacora/Dia 3/foto de la antena de red.jpeg"><img src="../assets/bitacora/Dia 3/foto de la antena de red.jpeg" alt="Antena de red"></a>
-                <button class="gallery-view-all">Ver galería completa</button>
-            </div>
-            </div>
+<!-- COMIENZA EL CSS PARA EL ICONO DE GITHUB -->
+<style>
+    /* Modifico tu .main-footer para darle el look oscuro */
+    .main-footer {
+        text-align: center;
+        padding: 25px 0;
+        background-color: #161b22;
+        color: #8b949e;
+        width: 100%;
+        border-top: 1px solid #30363d;
+    }
+
+    /* Defino los estilos y la transición para el SVG */
+    .github-link svg {
+        width: 36px;
+        height: 36px;
+        vertical-align: middle; /* Alineación vertical con el texto */
+        margin-left: 12px;
+        cursor: pointer;
+        /* La clave de la suavidad: transiciones de 1.5s para color y filtro */
+        transition: fill 1.5s ease-in-out, filter 1.5s ease-in-out;
+        /* Asigno la animación 'pulse' que se ejecutará infinitamente */
+        animation: pulse 4s infinite ease-in-out;
+    }
+
+    /* Defino la animación keyframe para el pulso */
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.08); /* Crece un 8% a la mitad del ciclo */
+        }
+    }
+</style>
+<!-- TERMINA EL CSS PARA EL ICONO DE GITHUB -->
+Paso 2: Modificación del DOM en el <footer>
+Ahora, necesito alterar la estructura HTML para incluir el ícono.
+
+Ubico el <footer>: Hago scroll hasta el final del <body> y encuentro tu <footer> existente:
+
+HTML
+
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2025 G4IT. Todos los derechos reservados.</p>
     </div>
-</div>
-## 2. Ajustar los Estilos CSS
-Archivo a modificar: css/style.css
+</footer>
+Inyecto el SVG: Modifico el contenido del párrafo <p> para añadir el enlace (<a>) que contiene el SVG del ícono. Le asigno el id="github-icon" para que mi JavaScript pueda seleccionarlo. Es crucial que el href sea actualizado por el tuyo. La estructura final queda así:
 
-Acción: Vamos a modificar el layout del contenido para que el texto y la galería se muestren uno encima del otro.
+HTML
 
-Busca la regla .content-wrapper y reemplázala por este código. También, ajusta la media query para que el diseño sea consistente en móvil.
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2025 G4IT. Todos los derechos reservados.
+            <!-- Añado el enlace y el SVG justo aquí -->
+            <a href="https://github.com/tu-usuario/tu-repositorio" target="_blank" rel="noopener noreferrer" class="github-link" title="Visita mi repositorio en GitHub">
+                <svg id="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 ... 8z"></path> <!-- El path del SVG -->
+                </svg>
+            </a>
+        </p>
+    </div>
+</footer>
+Paso 3: Implementación de la Lógica JavaScript
+Finalmente, añado el comportamiento dinámico.
 
-CSS
+Localizo el final del <body>: Me posiciono justo antes de la etiqueta de cierre </body>. Veo que ya tienes otros scripts (main.js, lucide.createIcons(), tsparticles).
 
-/* --- Estilos para el contenido dentro del acordeón --- */
-.content-wrapper {
-    display: grid;
-    /* UNA SOLA COLUMNA PARA APILAR LOS ELEMENTOS */
-    grid-template-columns: 1fr; 
-    gap: 2.5rem;
-    padding: 2rem 0;
-    text-align: left;
-}
-No necesitas añadir más CSS. Con estos cambios, la sección del Día 3 mostrará primero la descripción de los grupos de trabajo y, justo debajo, la cuadrícula de la galería de fotos, manteniendo todo limpio y profesional.
+Añado el script del ícono: Para asegurar que el DOM esté completamente cargado y mi script pueda encontrar el elemento con id="github-icon", lo coloco al final, después de todas las demás importaciones de scripts. Esto es una práctica estándar para evitar errores de "elemento no encontrado". El script que añado es el siguiente:
+
+HTML
+
+<!-- COMIENZA EL JAVASCRIPT PARA EL ICONO DE GITHUB -->
+<script>
+    // 1. Obtengo una referencia al elemento SVG usando su ID único.
+    const githubIcon = document.getElementById('github-icon');
+
+    // 2. Defino el array de colores neón que se ciclarán.
+    const neonColors = ['#00CFE8', '#A020F0', '#39FF14', '#FF1493', '#FFFFFF'];
+    let colorIndex = 0;
+
+    // 3. Creo la función que actualizará el estilo del ícono.
+    function updateIconStyle() {
+        const currentColor = neonColors[colorIndex];
+
+        // 4. Modifico directamente las propiedades CSS del elemento.
+        githubIcon.style.fill = currentColor; // Cambia el color del SVG.
+        githubIcon.style.filter = `drop-shadow(0 0 8px ${currentColor})`; // Aplica el brillo.
+
+        // 5. Avanzo el índice para el próximo color, usando el operador de módulo para ciclar.
+        colorIndex = (colorIndex + 1) % neonColors.length;
+    }
+
+    // 6. Configuro un intervalo para ejecutar la función cada 3000ms (3 segundos).
+    setInterval(updateIconStyle, 3000);
+
+    // 7. Ejecuto la función una vez de inmediato para que el ícono tenga color al cargar la página.
+    updateIconStyle();
+</script>
+<!-- TERMINA EL JAVASCRIPT PARA EL ICONO DE GITHUB -->
+Siguiendo estos tres procedimientos, el componente queda totalmente integrado, funcional y manteniendo la estructura de tu proyecto.
