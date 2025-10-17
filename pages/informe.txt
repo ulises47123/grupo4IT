@@ -1,0 +1,29 @@
+(esto tiene que ir la seccion de sobre nostros (actualisar la secciones de dias x))
+
+
+
+
+Día 1
+Actividad realizada Se desmontó una computadora para registrar sus componentes. Cada integrante del grupo cumplió un rol específico en la tarea. Luego, se intentó encender el equipo; al principio funcionó, pero posteriormente dejó de responder, por lo que se inició un diagnóstico. Mientras tanto, dos integrantes se encargaron de la instalación de un proyector y el sistema de sonido en el aula.
+
+Adicionalmente, se les efectuó un mantenimiento preventivo de limpieza general a las unidades. Se constató la presencia de una acumulación significativa de polvo en la totalidad de los componentes internos, procediéndose a su remoción con herramientas como pincel, paño y destornilladores. También se realizó la extracción de un disco duro de una de las PC desensambladas, con el propósito de ser utilizado en el ensamblaje de una tercera unidad de cómputo.
+
+Problema encontrado La computadora dejó de encender durante la práctica.
+
+Diagnóstico / Solución aplicada Tras la revisión, se concluyó que el fallo estaba relacionado con la ranura de memoria RAM o alguna resistencia dañada, posiblemente debido al desgaste por antigüedad. Finalmente, se volvió a ensamblar la computadora dejando asentado el estado del equipo.
+
+Día 2
+Actividad realizada El día 3 se llevó a cabo el desensamblaje de cuatro (4) computadoras de mesa (PC). El objetivo principal fue la extracción de componentes para el ensamblaje y puesta en funcionamiento de una nueva unidad de cómputo. Entre los componentes extraídos se incluyó una unidad de almacenamiento (disco duro). Se procedió a la revisión del contenido de dos unidades de almacenamiento:
+
+Una unidad estaba vacía (sin datos ni sistema operativo).
+
+La segunda unidad contenía archivos y particiones preexistentes.
+
+La unidad de almacenamiento que no contenía datos se seleccionó para la instalación del sistema operativo de la nueva PC. Durante el proceso, también se realizó una limpieza de polvo de los componentes de las computadoras desarmadas, utilizando destornilladores como herramienta de apoyo para el desarme.
+
+Día 3
+Actividad realizada La jornada laboral se organizó mediante la división del trabajo en dos grupos, cada uno enfocado en tareas específicas de configuración de software:
+
+Grupo 1: Productividad y Red Se encargó de la instalación completa del paquete Office. Adicionalmente, se instaló el driver de Wi-Fi de una antena de red externa, la cual se utilizará para evaluar y probar el rendimiento de la máquina.
+
+Grupo 2: Multimedia Se enfocó en la correcta carga e instalación de los drivers de audio necesarios para garantizar el funcionamiento óptimo del sonido en el equipo.

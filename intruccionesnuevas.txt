@@ -1,0 +1,64 @@
+Instrucciones para el Desarrollador: Reintegrar Galería en Día 3
+Objetivo: Añadir la galería de fotos nuevamente a la sección del #Día 3, ubicándola debajo de las cajas de texto de los grupos para mantener el diseño organizado y profesional.
+
+## 1. Actualizar la Estructura HTML
+Archivo a modificar: pages/sobre-nosotros.html
+
+Acción: Dentro del accordion-item del #Día 3, busca el div con la clase content-text. Justo después del cierre de ese div (pero antes del cierre de content-wrapper), añade el siguiente bloque de código para la galería.
+
+Básicamente, estamos combinando los dos diseños: el texto de los grupos arriba y la galería de vista previa 2x2 debajo.
+
+HTML
+
+<div class="accordion-item">
+    <button class="accordion-header">
+        <span>#Día 3: Configuración de Software por Grupos</span>
+        <i data-lucide="chevron-down" class="accordion-icon"></i>
+    </button>
+    <div class="accordion-content">
+        <div class="content-wrapper"> 
+            <div class="content-text">
+                <h4>Actividad Realizada</h4>
+                <p>La jornada se organizó en dos grupos de trabajo para agilizar la configuración de software en el equipo ensamblado:</p>
+                
+                <div class="task-list">
+                    <div class="task-group">
+                        <h5>Grupo 1: Productividad y Red</h5>
+                        <p>Se encargó de la instalación completa del paquete <strong>Office</strong>. Adicionalmente, se instaló el <strong>driver de Wi-Fi</strong> de una antena de red externa, la cual se utilizará para evaluar y probar el rendimiento de la máquina.</p>
+                    </div>
+                    <div class="task-group">
+                        <h5>Grupo 2: Multimedia</h5>
+                        <p>Se enfocó en la correcta carga e instalación de los <strong>drivers de audio</strong> necesarios para garantizar el funcionamiento óptimo del sonido en el equipo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-gallery">
+                <a href="../assets/bitacora/Dia 3/paso 1para intalar ofice.jpeg"><img src="../assets/bitacora/Dia 3/paso 1para intalar ofice.jpeg" alt="Inicio de instalación de Office"></a>
+                <a href="../assets/bitacora/Dia 3/paso 3 entramos al intalar de el ofice .jpeg"><img src="../assets/bitacora/Dia 3/paso 3 entramos al intalar de el ofice .jpeg" alt="Instalador de Office en proceso"></a>
+                <a href="../assets/bitacora/Dia 3/paso 4 termino de cargar el office.jpeg"><img src="../assets/bitacora/Dia 3/paso 4 termino de cargar el office.jpeg" alt="Instalación de Office completada"></a>
+                <a href="../assets/bitacora/Dia 3/foto de la antena de red.jpeg"><img src="../assets/bitacora/Dia 3/foto de la antena de red.jpeg" alt="Antena de red"></a>
+                <button class="gallery-view-all">Ver galería completa</button>
+            </div>
+            </div>
+    </div>
+</div>
+## 2. Ajustar los Estilos CSS
+Archivo a modificar: css/style.css
+
+Acción: Vamos a modificar el layout del contenido para que el texto y la galería se muestren uno encima del otro.
+
+Busca la regla .content-wrapper y reemplázala por este código. También, ajusta la media query para que el diseño sea consistente en móvil.
+
+CSS
+
+/* --- Estilos para el contenido dentro del acordeón --- */
+.content-wrapper {
+    display: grid;
+    /* UNA SOLA COLUMNA PARA APILAR LOS ELEMENTOS */
+    grid-template-columns: 1fr; 
+    gap: 2.5rem;
+    padding: 2rem 0;
+    text-align: left;
+}
+No necesitas añadir más CSS. Con estos cambios, la sección del Día 3 mostrará primero la descripción de los grupos de trabajo y, justo debajo, la cuadrícula de la galería de fotos, manteniendo todo limpio y profesional.

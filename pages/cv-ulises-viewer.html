@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Ulises Cabezas - G4IT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cv-viewer-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .cv-iframe {
+            width: 100%;
+            height: 85vh; /* Altura inicial, el script la ajustará */
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 12px 28px;
+            background-color: var(--color-accent);
+            color: var(--color-text-primary);
+            font-weight: 600;
+            border-radius: 50px;
+            border: 2px solid var(--color-accent);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: transparent;
+            border-color: var(--color-light-effect);
+            color: var(--color-light-effect);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-container"></div>
+    <header class="main-header">
+        <nav class="main-nav container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/logo/logo.png" alt="Logo de Grupo4IT" class="logo-icon">
+                <span>Grupo4IT</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content container">
+        <h1 class="section-title fade-in">CV: Ulises Julian Cabezas</h1>
+        <div class="cv-viewer-container fade-in">
+            <iframe id="cv-iframe" src="../assets/cv/Ulises Julian Cabezas.html" class="cv-iframe" title="CV de Ulises Cabezas"></iframe>
+            <a href="sobre-nosotros.html" class="back-button">Atrás</a>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 G4IT. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Configuración de partículas para asegurar que el fondo se cargue
+        tsParticles.load("particles-container", {
+            background: { color: { value: "#0f0f17" } },
+            fpsLimit: 60,
+            interactivity: {
+                events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 } }
+            },
+            particles: {
+                color: { value: "#7f5af0" },
+                links: { color: "#3b82f6", distance: 150, enable: true, opacity: 0.1, width: 1 },
+                collisions: { enable: true },
+                move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 1, straight: false },
+                number: { density: { enable: true, area: 800 }, value: 80 },
+                opacity: { value: 0.2 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 3 } }
+            },
+            detectRetina: true
+        });
+
+        // Script para ajustar la altura del iframe al contenido
+        const iframe = document.getElementById('cv-iframe');
+        iframe.onload = function() {
+            try {
+                const body = iframe.contentWindow.document.body;
+                const html = iframe.contentWindow.document.documentElement;
+                const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+                iframe.style.height = height + 'px';
+            } catch (e) {
+                console.error("No se pudo ajustar el tamaño del iframe.", e);
+            }
+        };
+    </script>
+</body>
+</html>

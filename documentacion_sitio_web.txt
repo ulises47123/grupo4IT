@@ -1,0 +1,178 @@
+# Documentación del Sitio Web G4IT
+
+Este documento detalla el funcionamiento técnico, los estilos y los recursos utilizados en el sitio web del proyecto.
+
+---
+
+## 1. Cómo Funciona Todo (Arquitectura General)
+
+El sitio web está construido con HTML, CSS y JavaScript puros, siguiendo prácticas modernas para asegurar que sea mantenible y escalable.
+
+### 1.1. Estructura de Archivos
+
+El proyecto se organiza de la siguiente manera:
+
+- `/index.html`: La página de inicio.
+- `/pages/*.html`: Contiene las sub-páginas (Servicios, Portafolio, Sobre Nosotros, Contacto).
+- `/css/style.css`: Una única hoja de estilos que controla toda la apariencia del sitio.
+- `/js/main.js`: Un único archivo JavaScript que maneja toda la interactividad.
+- `/assets/`: Carpeta que contiene todos los recursos, dividida en:
+    - `bitacora/`: Imágenes de la bitácora, organizadas por día.
+    - `cv/`: Currículums del equipo.
+    - `icons/`: Iconos en formato SVG.
+    - `logo/`: El logo del sitio.
+    - `perfiles/`: Fotos de perfil de los miembros del equipo.
+
+### 1.2. Arquitectura CSS (El "cómo se ve")
+
+El archivo `style.css` usa un enfoque organizado:
+
+- **Variables CSS:** En la sección `:root`, se definen colores, fuentes y tamaños globales. Esto permite cambiar la paleta de colores de todo el sitio modificando solo unas pocas líneas.
+- **Layout Moderno:** Se utiliza **Flexbox** para alinear elementos complejos como la barra de navegación y **CSS Grid** para crear las cuadrículas de contenido (servicios, portafolio, equipo), lo que permite que el diseño sea adaptable a diferentes pantallas.
+- **Estética Futurista:**
+    - **Glassmorphism (Efecto Cristal):** La barra de navegación usa un fondo semitransparente con un filtro `backdrop-filter: blur(10px)` para crear un efecto de cristal esmerilado sobre el contenido que pasa por detrás.
+    - **Fondo Animado:** El fondo del sitio no es una imagen, sino un conjunto de gradientes y partículas animadas con la librería `tsParticles` para crear una atmósfera de "neblina digital" sin sacrificar rendimiento.
+
+### 1.3. Lógica de JavaScript (El "cómo interactúa")
+
+El archivo `main.js` añade la interactividad:
+
+- **Animaciones al Hacer Scroll:** Usa `IntersectionObserver` para detectar cuándo un elemento entra en la pantalla y aplicarle una animación de aparición (`fade-in`). Es una técnica muy eficiente.
+- **Menú Móvil (Hamburguesa):** El menú de navegación se transforma en un icono de hamburguesa en pantallas pequeñas, que despliega el menú al hacer clic.
+- **Acordeón de Bitácora:** Permite expandir y contraer las secciones de cada día en la página "Sobre Nosotros".
+- **Galería de Imágenes:** Se usa la librería `SimpleLightbox` para mostrar las galerías de imágenes de la bitácora en un formato profesional.
+
+---
+
+## 2. Estilo Usado para Cada Sección
+
+### 2.1. Cabecera y Navegación (`.main-header`)
+
+- **Estilo:** Glassmorphism.
+- **Posición:** Fija (`position: fixed`) en la parte superior para que siempre esté visible.
+- **Layout:** Flexbox para alinear el logo a la izquierda y el menú de navegación a la derecha.
+- **Efecto Hover:** Los enlaces del menú tienen una línea animada que aparece debajo al pasar el ratón.
+
+### 2.2. Sección de Equipo (`.team-section`)
+
+- **Layout:** CSS Grid adaptable (`grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))`), que ajusta automáticamente el número de columnas según el ancho de la pantalla.
+- **Tarjetas de Perfil (`.profile-card`):**
+    - Fondo semitransparente y un borde sutil.
+    - Las fotos de perfil son circulares (`border-radius: 50%`) con un borde de color de acento.
+    - Tienen una sombra y un ligero desplazamiento hacia arriba al pasar el ratón (`transform: translateY(-10px)`).
+
+### 2.3. Bitácora y Acordeón (`.bitacora-section`)
+
+- **Layout General:** Centrado y con un ancho máximo para facilitar la lectura.
+- **Acordeón (`.accordion`):**
+    - Cada ítem (`.accordion-item`) tiene un botón (`.accordion-header`) y un contenido (`.accordion-content`).
+    - La animación de despliegue se logra animando la propiedad `max-height` del contenido de 0 a un valor automático.
+    - El icono de la flecha gira 180 grados cuando el acordeón está activo.
+- **Contenido del Acordeón (`.content-wrapper`):
+    - Se divide en una cuadrícula de dos columnas: texto a la izquierda y galería de imágenes a la derecha.
+    - En móviles, la cuadrícula se convierte en una sola columna, apilando el texto sobre la galería.
+
+---
+
+## 3. Listado Completo de Recursos Gráficos
+
+A continuación, se listan todas las imágenes y documentos encontrados en el proyecto:
+
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/entramos con linux para ver i la particion tiene alguna informacion valiosa vista desde otra pespectiva.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/entramos con linux para ver i la particion tiene alguna informacion valiosa.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/uno de los integrantes esta desarmando la computadora (de escritorio).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/uno de los integrantes esta desarmando la computadora (de escritorio) desde otro punto de vista.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto del teclado.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto de la placa base .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto de una memoria ram.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/vista del interior de una computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/placa de sonido .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando coneccion entre el dico duro y la placa .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/placa de red (integrada).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/mostrando foto de interior de una computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/motrando la placa base (de la pc).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto de una placa de video .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto de un teclado (viejo y tomada de serca).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/prosesador pegado al disipador (vista de otra pespectiva).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/parte tracero del teclado.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/conectando cables de una pc de escritorio.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/entrando a la bios.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/inicio de windor 7 (pantalla negra y se muestra la fot de inicio de windor 7).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/se muestra el interior de una computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/parte interna de una pc de escritorio .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/bios de la computadora(de escritorio).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/prosesador pegado al disipador .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando uno de los paso de intalacion  de windor.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/intalando un sistema operativo windor.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostarando la placa de forma de serca (es una placa se ve la sloc y donde se coloca la ram y prosesador  efecto poco borroso ).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando la pantalla (la pantalla de carga del sistema  cargando minios(es un sistema operativo modificado)).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/la pantalla de inicio de windor 7.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando particiones del disco .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/observando las particiones del disco.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/muestra la particion y tambien muestra los discos.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/pantalla de carga de windo- parte de intalacion.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/optimisando el sistema (pantalla muestra que se ta cargando la optimisisacion).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/semuestra un parlante.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/estrallendo cable del proyector .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/conectando los cable del proyector como del parlantes.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/preparando el proyector.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/preparando dispositivo de sonido.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 1/foto de relleno (muestra una compu y cablerio).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/iniciando windor 7 (aqui no seve el icono de windor 7).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/una ventana de ventaoy tan eligiendo el sistema windor.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/la ventana de ventoy de cargando.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/la bienvenida de windor 7 pra intalar y elegir el idiama .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/encendiendo la computadora (aparece una pantalla de inicio del fabricante de la msima).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui hay una pantalla que ta apagada y de fondo hay un integrante.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/cambiando  cambiando forma de botear.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/el iso ta cargando en la computadora para comensar la intalacion.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/probando la computadora (ta conectado a la corriente para probar  si prende correctamente).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/observando como ta todo conectando cuando se tava probando .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando una plaquita.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/copiando la imagen iso al usb para botear desde otra pespectiva(lo que se ve es una  laptop  que ta cargando ).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/copiando la imagen iso al usb para botear.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando una plaquita desde otro punto de vista.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/es una imagen donde se muestra el interior de una fuente de poder (la tan limpiando).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/conectando la plaquita a la placa madre.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando los dico duros(se ve  dos disco duro ).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui una fuente de poder desarmado.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui tambien se muetra una computadora que parece que tan conectando una plaquita al a placa adre.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/asiendo la limpieza  a la placa madre.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/como se ve la torre que  que tamos arreglando.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui se ve una foto de fondo hay una maquina y justo ta pasando uno de los integrantes.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/foto de la otra maquina que ta desarmada.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui hay uno de los integrantes ta cargando una computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/se muetsra una pc .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/revisando que componente sacar para poner a otra computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/uno de los integrantes sacando las piezas de una computadora.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/una memoria ram .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/seve un disco duro.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/aqui se ve una placa base y que esta conecta (no ta enchufada a la corrriente).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/foto de una torre.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/la vista de los componente interno de la pc de escritorio.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/armando la fuente de poder.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 2/mostrando la placa de vido.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/foto de la antena de red.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/moviendo un pieza del gabinete para ordenar algo(lector de dvd).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 1para intalar ofice.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/muestra una laptop.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/otra lapto.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 2 descomprimir la imagen iso (ofice).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 3 entramos al intalar de el ofice .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/foto de una laptop .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 5 , observar que esten todo los programas de ofice esten .jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 5 probar el ofice (estamos dentro del word).jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/paso 4 termino de cargar el office.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/motrando mas laptop juntas.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/muestra de otra laptop.jpeg
+/home/ulises/Desktop/pagina web/assets/bitacora/Dia 3/otra laptopp.jpeg
+/home/ulises/Desktop/pagina web/assets/cv/cv_candela.pdf
+/home/ulises/Desktop/pagina web/assets/cv/CV_Roberto_Rene_Arze.docx
+/home/ulises/Desktop/pagina web/assets/cv/Informe Ia Apa7 Final.pdf
+/home/ulises/Desktop/pagina web/assets/icons/icon_linkedin.svg
+/home/ulises/Desktop/pagina web/assets/icons/icon_web.svg
+/home/ulises/Desktop/pagina web/assets/logo/logo.png
+/home/ulises/Desktop/pagina web/assets/perfiles/Candela Geronimo.png
+/home/ulises/Desktop/pagina web/assets/perfiles/Roberto Rene Arze.png
+/home/ulises/Desktop/pagina web/assets/perfiles/Tania Garnica.png
+/home/ulises/Desktop/pagina web/assets/perfiles/Ulises Julian Cabezas.png

@@ -1,0 +1,10 @@
+aqui hay carpetas que tienen por nombre dias y hace referecia a la seccion de sobre nosotros , en la parte de abajo  va los informe dia x y dentro de esa parte tiene que ir esas imagenes cada imagenes tiene nombre de la accion que se ta haciendo por ejemplo intalando-proyector.png por ejemplo y tendras que ir organisandolo , luego de aver implementado  las fotos se te pide que actualises en el repo git hub , si no recuerdas  tema de nombre del repo SSH
+linux
+SHA256:q3hEsXwmbTwqXlDPmcRsnretbDv2uhn2nubH0DM9hyw
+Added on Oct 15, 2025 by @ulises47123
+Last used within the last week — Read/write
+
+
+este es el repo :git@github.com:ulises47123/grupo4IT.git
+este es nombre de usuario:ulises47123
+correo electronico es :cajulian213@gmail.com
